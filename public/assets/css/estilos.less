@@ -1,0 +1,387 @@
+/****************************************
+				FUNÇÕES
+*****************************************/
+.centralizar() {
+	margin: 0 auto;
+}
+.arredondar(@radio: 5px) {
+	-o-border-radius: @radio;
+	-ms-border-radius: @radio;
+	-webkit-border-radius: @radio;
+	-moz-border-radius: @radio;
+	border-radius: @radio;
+}
+.transicao(@time: 1s) {
+	-o-transition:@time;
+	-ms-0transition:@time;
+	-webkit-transition:@time;
+	-moz-transition:@time;
+	transition:@time;
+}
+.sombrear(@size:1px,@opacity:0.5) {
+	-o-box-shadow: @size @size @size rgba(0,0,0,@opacity);
+	-ms-box-shadow: @size @size @size rgba(0,0,0,@opacity);
+	-moz-box-shadow: @size @size @size rgba(0,0,0,@opacity);
+	-webkit-box-shadow: @size @size @size rgba(0,0,0,@opacity);
+	box-shadow: @size @size @size rgba(0,0,0,@opacity);
+}
+/*****************************************/
+@font-face {
+	font-family: myriad;
+	src: url('../fonts/MYRIADPRO-REGULAR.OTF');
+}
+body {
+	font-family: myriad;
+	background: rgb(240,240,240);
+}
+/*****************************************/
+
+/****************************************
+				HEADER
+*****************************************/
+#content {
+	width: 960px;
+	.centralizar;
+	margin-top: 20px;
+	background: #FFF;
+	padding: 3px;
+	.sombrear(3px,0.1);
+
+	#header-content {
+		width: 100%;
+		height: 45px;
+		background: #78A300;
+		.arredondar;
+		background-image: url(../imgs/logo.fw.png);
+		background-repeat: no-repeat;
+		background-position: 20px;
+	}
+
+/****************************************
+				CONTENT
+*****************************************/
+	#content-page {
+		width: 100%;
+		clear: both;
+		overflow: hidden;
+		padding: 20px;
+
+		h1 {
+			font-weight: normal;
+			color: #434343;
+			text-align: center;
+		}
+		h3 {
+			color: #434343;
+			font-weight: normal;
+			text-align: center;
+
+			span {
+				color: #78A300;
+			}
+		}
+		#opcoes {
+			.centralizar;
+			width: 550px;
+
+			a {
+				float: left;
+				margin: 55px 0 55px 200px;
+				border: none;
+				background: #fff;
+				.transicao(0.5s);
+
+				&:hover {
+					background: #F2FFD2;
+					.transicao(0.5s);
+					.arredondar;
+					.sombrear(2px,0.2);
+				}
+			}
+		}
+	/************** * PAGES ****************/
+	#pesquisar {
+
+		a img{
+			border:none;
+		}
+
+		form {
+		  	width:100%;
+		  	margin:10px 0 10px 0;
+		  	text-align:center;
+
+			p {
+		 		padding:12px;
+
+		 		label {
+		  			color:#333;
+		  			font-weight:100;
+		  			margin: 10px;
+				}
+
+			}
+			input{
+				.arredondar;
+			  	padding:6px;
+			  	border:1px solid #ccc;
+			  	width:300px;
+			}
+			select {
+				.arredondar;
+				padding: 5px;
+				}
+			button {
+				margin-left: 10px;
+				background-color:rgb(141,196,0);
+				width:114px;
+				height:33px;
+				border: none;
+				color:#fff;
+				.arredondar;
+				border-radius:8px;
+				.transicao(0.3s);				
+
+				&:hover {
+					.transicao(0.3s);
+					background-color:rgb(141,196,0) / 1.2;
+				}
+			}
+		}
+
+		table{
+		  	width:90%;
+		  	.centralizar;
+		  	border:1px solid #999;
+		  	.arredondar(10px);
+		}
+
+		table thead th{
+		  	padding:6px;
+		  	font-weight: 100;
+		  	border: 1px solid #999;
+		  	color:#434343;
+		  	text-align:center;
+		  	font-size:16px;
+		}
+
+		table thead th.header{
+		  cursor:pointer;
+		}
+
+		table tbody td{
+		  padding:6px;
+		  text-align:center;
+		  color:#333;
+		}
+
+		table tbody tr.odd td{
+		  background-color:#ffffcc;
+		}
+
+		table tbody tr.hover td{
+		  background-color:#a9d0f5;
+		}
+
+		table tbody tr.selected td{
+		  background-color:#a9f5a9!important;
+		}
+
+		.pagedisplay{
+			width:40px;
+			text-align:center;
+			border:none;
+			background-color:#f2f2f2;
+			font-weight:900;
+		}
+
+		#pager span{
+			font-weight:900;
+			display:inline-block;
+			margin:0 0 0 20px;
+			color:#666;
+			float:right;
+		}
+
+		#pager form{
+			text-align:left;
+			padding:10px;
+			width:580px;
+
+		}
+		#botaoVoltar {
+			background-color:rgb(141,196,0);
+			width:114px;
+			height:33px;
+			border: none;
+			color:#fff;
+			.arredondar;
+			border-radius:8px;
+			.transicao(0.3s);
+			padding: 0 10px;
+			text-decoration: none;
+			float: right;
+			text-align: center;
+
+			&:hover {
+				.transicao(0.3s);
+				background-color:rgb(141,196,0) / 1.2;
+			}
+		}
+
+	}
+	#formulario-cadastro {
+		width: 100%;
+
+		.erro {
+			width: 96%;
+			text-align: center;
+			margin: 5px;
+			padding: 10px 0;
+			color: red;
+			background: rgb(250,200,200);
+			.arredondar(5px);
+		}
+		.success {
+			width: 96%;
+			text-align: center;
+			margin: 5px;
+			padding: 10px 0;
+			color: green;
+			background: rgb(200,250,200);
+			.arredondar(5px);
+		}
+		#formleft {
+			width: 480px;
+			float: left;
+
+			input,select,textarea,label {
+				padding: 3px;
+				.arredondar;
+				width: 250px;
+				border: 1px solid #434343;
+				margin: 10px 5px 10px;
+				float: left;
+			}
+			label {
+				clear: both;
+				display: block;
+				border: none;
+				width: 150px;
+				padding-top: 5px;
+				margin: 10px 0 10px 0;
+			}
+			#categoria {
+				margin-right: 60px;
+				float: right;
+			}
+			#descricao {
+				height: 100px;
+			}
+			#solicitante {
+				margin-right: -20px;
+			}
+			textarea {
+				width: 400px;
+			}
+		}
+		#formRight {
+			width: 480px;
+			float: right;
+	
+			input,select,textarea {
+				padding: 3px;
+				.arredondar;
+				width: 250px;
+				border: 1px solid #434343;				
+				margin: 10px 5px 10px 0;
+			}
+			label {
+				border: none;
+				float: left;
+				width: 150px;
+				margin: 15px 0 0 15px;
+			}
+			input,select {
+				margin-top: 10px;
+			}
+			select {
+				padding: 2px;
+			}
+			#serie,#codCliente,#nTicket {
+				width: 242px;
+				margin-right: 20px;
+			}
+		}
+
+		button {
+			float: right;
+			margin: 40px 60px 10px 10px; 
+			background-color:rgb(141,196,0);
+			width:114px;
+			height:33px;
+			border: none;
+			color:#fff;
+			.arredondar;
+			.transicao(0.3s);
+			color: #fff;
+			text-decoration: none;
+
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+			&:hover {
+				.transicao(0.3s);
+				background-color:rgb(141,196,0) / 1.2;
+			}
+		}
+		a {
+			text-align: center;
+			padding: 7px 30px;
+			float: right;
+			margin: 40px 0 10px 10px; 
+			background-color:rgb(141,196,0);
+			border: none;
+			color:#fff;
+			.arredondar;
+			.transicao(0.3s);
+			color: #fff;
+			text-decoration: none;
+
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+			&:hover {
+				.transicao(0.3s);
+				background-color:rgb(141,196,0) / 1.2;
+			}
+		}
+		#botao01 {
+			text-align: center;
+			padding: 7px 30px;
+			float: right;
+			margin: 40px 0 10px 10px; 
+			background-color:rgb(141,196,0);
+			border: none;
+			color:#fff;
+			.arredondar;
+			.transicao(0.3s);
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+
+	}
+/****************************************
+				FOOTER
+*****************************************/
+	#content-footer {
+		background: #78A300;
+		width:100%;
+		height:85px;
+		.arredondar(10px);
+		margin-top: 0;
+	}
+}
